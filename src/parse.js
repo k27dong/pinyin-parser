@@ -1,9 +1,9 @@
 ;(function () {
   // CORE
   parse = function (message, options = 0) {
-    const TONE = require("./const"),
-      INITIAL = require("./const"),
-      FINAL = require("./const")
+    const TONE = require("./const").TONE,
+      INITIAL = require("./const").INITIAL,
+      FINAL = require("./const").FINAL
 
     const set_char = (str, index, char) => {
       return str.substring(0, index) + char + str.substring(index + 1)
