@@ -93,7 +93,7 @@
   }
 
   module.exports = function (message, options = 0) {
-    if (!(typeof myVar === "string" || myVar instanceof String)) {
+    if (!(typeof message === "string" || message instanceof String)) {
       throw new Error("Illegal argument " + message)
     }
 
