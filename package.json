@@ -4,7 +4,7 @@
   "description": "a tiny parser for pinyin",
   "main": "src/parse.js",
   "scripts": {
-    "test": "echo \"No test specified\""
+    "test": "nyc --reporter=text mocha test/*.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/k27dong/pinyin-parser/issues"
   },
-  "homepage": "https://github.com/k27dong/pinyin-parser#readme"
+  "homepage": "https://github.com/k27dong/pinyin-parser#readme",
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0",
+    "nyc": "^15.1.0",
+    "request": "^2.88.2"
+  }
 }

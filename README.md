@@ -1,5 +1,11 @@
 ## Pinyin-Parser
 
-WIP
+a tiny parser for Pinyin
 
-a tiny parser for pinyin
+### Usage
+
+```javascript
+import parse from 'pinyin-parser'
+
+console.log(parse("sì shuǐ liú nián"));
+```

@@ -1,5 +1,4 @@
 ;(function () {
-  // CORE
   parse = function (message, options = 0) {
     const TONE = require("./const").TONE,
       INITIAL = require("./const").INITIAL,
@@ -9,7 +8,7 @@
       return str.substring(0, index) + char + str.substring(index + 1)
     }
 
-    let msg_arr = message.split(" ")
+    let msg_arr = message.toLowerCase().trim().split(/\s+/)
     let result = []
 
     for (let i of msg_arr) {
@@ -61,25 +60,27 @@
             case "ǜ":
               i = set_char(i, j, "ü")
               break
-            default:
-              break
           }
         }
       }
 
-      // get initial and final (n^2)
+      // get initial and final
       for (let fin of FINAL) {
         if (i === fin) {
           initial = ""
           final = fin
         } else {
           for (let init of INITIAL) {
-            if (i.startsWith(init) && i.endsWith(fin)) {
+            if (init + fin === i) {
               initial = init
               final = fin
             }
           }
         }
+      }
+
+      if (initial == "" && final == "") {
+        throw new Error(`Invalid pinyin: ${i}`)
       }
 
       result.push({
@@ -94,7 +95,7 @@
 
   module.exports = function (message, options = 0) {
     if (!(typeof message === "string" || message instanceof String)) {
-      throw new Error("Illegal argument " + message)
+      throw new Error(`Illegal argument: message must be a string, got ${typeof message} (${message})`)
     }
 
     return parse(message, options)
