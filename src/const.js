@@ -89,3 +89,9 @@ const FINAL = [
   "üe",
   "ün",
 ]
+
+module.exports = {
+  TONE: TONE,
+  INITIAL: INITIAL,
+  FINAL: FINAL,
+}
