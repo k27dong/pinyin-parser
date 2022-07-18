@@ -70,7 +70,6 @@ const FINAL = [
   "ie",
   "in",
   "ing",
-  "io",
   "iong",
   "iu",
   "o",
@@ -85,9 +84,8 @@ const FINAL = [
   "un",
   "uo",
   "ü",
-  "üan",
   "üe",
-  "ün",
+  "ue",
 ]
 
 module.exports = {
