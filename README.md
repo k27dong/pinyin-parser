@@ -31,7 +31,7 @@ npm i pinyin-parser
 
 ### Test
 ```bash
-npm run test
+npm test
 ```
 
 ### License
